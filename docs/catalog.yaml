@@ -2,7 +2,7 @@
 
 name: made-shelf
 repo: https://github.com/aydnOktay/hermes-made-shelf
-sha: REPLACE_WITH_40_CHAR_COMMIT
+sha: b7b0ee55abf22562a7d618864857162825b7bb3e
 description: Everything Hermes made — cross-session shelf of wrote/patched paths.
   Full Desktop page, chip, pin. No API keys.
 maintainer: aydnOktay
