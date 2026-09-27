@@ -1,0 +1,24 @@
+name: made-shelf
+version: 0.1.0
+manifest_version: 1
+api_version: 1
+description: >
+  Everything Hermes made for you — one Desktop shelf. Cross-session gallery of
+  files the agent wrote or patched (and images it saved). Pin favorites, open
+  or reveal paths, insert into chat. Disclosure — stores local path metadata
+  under plugin-data; does not upload files. No API keys.
+author: aydnOktay
+license: MIT
+homepage: https://github.com/aydnOktay/hermes-made-shelf
+requires_hermes: ">=0.21"
+tags: [desktop, artifacts, files, gallery, tools]
+provides_tools:
+  - made_shelf_list
+  - made_shelf_clear
+provides_hooks:
+  - post_tool_call
+config_schema:
+  max_items:
+    type: int
+    default: 80
+    description: Maximum shelf items kept on disk.
