@@ -95,24 +95,22 @@ function chipStyle(active) {
   }
 }
 
-function insertPath(item) {
+async function insertPath(item) {
   const text = item.path || item.name || ''
   if (!text) return
-  try {
-    window.dispatchEvent(
-      new CustomEvent('hermes:composer-insert', {
-        detail: { mode: 'block', target: 'main', text },
-      }),
-    )
-  } catch {
-    /* older hosts */
+  // SDK composer verb (Hermes >= 0.21.5): resolves true when a mounted
+  // composer took the text, false when none answers — then fall back to
+  // the clipboard instead of guessing.
+  if (await host.composer.insertText(null, text, { mode: 'block' })) {
+    host.notify({ kind: 'info', message: 'Path inserted into the composer.' })
+    return
   }
   if (host.os && typeof host.os.writeClipboard === 'function') {
     void host.os.writeClipboard(text)
   }
   host.notify({
     kind: 'info',
-    message: 'Path inserted / copied. Paste if it did not appear.',
+    message: 'No open composer — path copied to the clipboard.',
   })
 }
 
