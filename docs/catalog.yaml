@@ -8,7 +8,7 @@ description: Everything Hermes made — cross-session shelf of wrote/patched pat
 maintainer: aydnOktay
 tier: community
 category: desktop
-requires_hermes: ">=0.21"
+requires_hermes: ">=0.21.5"
 docs_url: https://github.com/aydnOktay/hermes-made-shelf
 version: "0.1.0"
 platforms: []

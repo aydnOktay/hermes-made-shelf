@@ -10,7 +10,7 @@ description: >
 author: aydnOktay
 license: MIT
 homepage: https://github.com/aydnOktay/hermes-made-shelf
-requires_hermes: ">=0.21"
+requires_hermes: ">=0.21.5"
 tags: [desktop, artifacts, files, gallery, tools]
 provides_tools:
   - made_shelf_list
